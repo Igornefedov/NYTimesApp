@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">NYT App</string>
+    <string name="new_york_times">New York Times</string>
+    <string name="no_results">No results :(</string>
+    <string name="Search">Search...</string>
+    <string name="article_image">Article image</string>
+    <string name="connect_to_internet">Please connect to internet to use this application</string>
+    <string name="link">Link:</string>
+    <string name="share_via">Share via</string>
+</resources>

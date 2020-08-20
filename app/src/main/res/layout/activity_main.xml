@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainScreen.MainActivity">
+
+
+    <LinearLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/actionToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_weight="1"
+                android:background="?attr/colorPrimary"
+                android:visibility="visible"
+                app:contentInsetStart="@dimen/main_toobar_ins_start">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+                        android:id="@+id/toolbarHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="@dimen/main_toolbar_marg"
+                        android:gravity="center"
+                        android:text="@string/new_york_times"
+                        android:textColor="@color/white_color"
+                        android:textSize="@dimen/main_toolbar_text_size" />
+
+                    <ImageView
+                        android:id="@+id/searchButton"
+                        android:layout_width="@dimen/main_search_button_width"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginEnd="@dimen/main_search_btn_margin_end"
+                        android:layout_marginRight="@dimen/main_search_btn_margin_right"
+                        android:padding="@dimen/main_search_btn_padding"
+                        app:srcCompat="@drawable/ic_search_white_48dp" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.Toolbar>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/searchToolBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_weight="1"
+                android:background="@android:color/white"
+                android:visibility="gone"
+                app:contentInsetStart="@dimen/main_tool_insert_start">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="end"
+                    android:orientation="horizontal"
+                    android:visibility="visible"
+                    android:weightSum="1">
+
+                    <ImageView
+                        android:id="@+id/cancel"
+                        android:layout_width="@dimen/main_cancel_width"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="start|center_vertical"
+                        android:padding="@dimen/main_cancel_padding"
+                        app:srcCompat="@drawable/ic_arrow_back_black_48dp" />
+
+                    <ImageView
+                        android:id="@+id/clear"
+                        android:layout_width="@dimen/main_clear_width"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:padding="@dimen/main_clear_padding"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/ic_close_black_48dp" />
+
+                    <EditText
+                        android:id="@+id/searchField"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/clear"
+                        android:layout_toLeftOf="@+id/clear"
+                        android:layout_toEndOf="@+id/cancel"
+                        android:layout_toRightOf="@+id/cancel"
+                        android:background="@android:color/transparent"
+                        android:ems="10"
+                        android:hint="@string/Search"
+                        android:inputType="text|textCapSentences"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="?android:attr/textColorLink"
+                        android:textColorLink="?android:attr/textColorSecondary" />
+
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.Toolbar>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ProgressBar
+                style="?android:attr/progressBarStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/main_prog_bar_marg"
+                android:layout_weight="1"
+                tools:visibility="visible" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/noResultsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/main_no_res_sign_marg"
+            android:gravity="center_horizontal"
+            android:text="@string/no_results"
+            android:textSize="@dimen/main_no_res_sign_text_size"
+            android:visibility="gone" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
